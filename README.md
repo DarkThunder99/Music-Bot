@@ -1,4 +1,4 @@
-# 🤖 Music-Bot
+# 🤖 Music-Bot    Please ⭐ The Project if you Like it.
 
 ## 🔎 Deploy Links
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DarkThunder99/Music-Bot)
