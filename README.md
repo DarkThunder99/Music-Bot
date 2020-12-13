@@ -1,7 +1,7 @@
 # 🤖 Music-Bot    Please ⭐ The Project if you Like it.
 
 ## 🔎 Deploy Links
-[![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DarkThunder99/Music-Bot)
+[![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Feritislami%2Fevobot)
 
 ## 🔎 Requirements
 
@@ -17,7 +17,28 @@ You can Play Playlists from YouTube.
 I have all the files you need you can simply push to heroku and make some Config Vars under (Settings >> Config Vars)
 or if you wanna run it on a raspberry pi you can with the *config.json.example* file just simple rename it to *config.json*
 
-## ⚙️ Config Vars
-token - Used to login as a discord application/bot. **[Guide](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)**
-ytapikey - Used to search youtube for video/songs. **[Guide](https://developers.google.com/youtube/v3/getting-started)**
-prefix - Anything as a prefix. Ex: `!play` - `!` is the prefix.
+## ⚙️ Self Hosting
+Copy or Rename `config.json.example` to `config.json` and fill out the values:
+
+⚠️ Note: Never commit or share your token or api keys publicly ⚠️
+```{
+  "TOKEN": "",
+  "YOUTUBE_API_KEY": "",
+  "SOUNDCLOUD_CLIENT_ID": "",
+  "MAX_PLAYLIST_SIZE": 10,
+  "PREFIX": "/",
+  "PRUNING": false,
+  "STAY_TIME": 30
+}```
+
+## ⚙️ Heroku Hosting
+Go to Heroku.com and Make a New App,
+Now go to Config Vars and Make New Vars Like this
+```  TOKEN
+  YOUTUBE_API_KEY
+  SOUNDCLOUD_CLIENT_ID:
+  MAX_PLAYLIST_SIZE
+  PREFIX
+  PRUNING
+  STAY_TIME
+  ```
