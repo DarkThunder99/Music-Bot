@@ -34,8 +34,10 @@ Copy or Rename `config.json.example` to `config.json` and fill out the values:
 ```
 
 ## ⚙️ Heroku Hosting
+Fork the Project,
 Go to Heroku.com and Make a New App,
-Now go to Config Vars and Make New Vars Like this
+Then Go to Deploy and Connect the Repository,
+Then Go to Config Vars and Make New Vars Like this
 ```
 TOKEN
 YOUTUBE_API_KEY
