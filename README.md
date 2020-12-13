@@ -1,4 +1,4 @@
-# 🤖 Music-Bot Please ⭐ Star the Project if you Like it. 
+# 🤖 Music-Bot Please Give a 🌟 If you like the Bot!!
 
 ## 🔎 Deploy Links
 [![Heroku Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Feritislami%2Fevobot)
