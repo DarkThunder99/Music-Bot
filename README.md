@@ -21,24 +21,27 @@ or if you wanna run it on a raspberry pi you can with the *config.json.example* 
 Copy or Rename `config.json.example` to `config.json` and fill out the values:
 
 ⚠️ Note: Never commit or share your token or api keys publicly ⚠️
-```{
+```
+{
   "TOKEN": "",
   "YOUTUBE_API_KEY": "",
-  "SOUNDCLOUD_CLIENT_ID": "",
+  "SOUNDCLOUD_CLIENT_ID": "", (Optional)
   "MAX_PLAYLIST_SIZE": 10,
   "PREFIX": "/",
   "PRUNING": false,
   "STAY_TIME": 30
-}```
+}
+```
 
 ## ⚙️ Heroku Hosting
 Go to Heroku.com and Make a New App,
 Now go to Config Vars and Make New Vars Like this
-```  TOKEN
-  YOUTUBE_API_KEY
-  SOUNDCLOUD_CLIENT_ID:
-  MAX_PLAYLIST_SIZE
-  PREFIX
-  PRUNING
-  STAY_TIME
-  ```
+```
+TOKEN
+YOUTUBE_API_KEY
+SOUNDCLOUD_CLIENT_ID (Optional)
+MAX_PLAYLIST_SIZE
+PREFIX
+PRUNING
+STAY_TIME
+```
