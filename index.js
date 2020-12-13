@@ -53,7 +53,7 @@ function end_Connection(bot, server, connect, msg) {
       .setDescription(`I have now stopped playing in ${connect.channel.name}`)
       .setAuthor(`${bot.user.username}`, bot.user.avatarURL);
 
-    msg.channel.send({ embed: endem }).then(m => m.delete(25000));
+    msg.channel.send({ embed: endem });
   }
 }
 
@@ -69,7 +69,7 @@ function play(connect, msg, bot) {
       .setDescription(`I will now start playing **${server.queueNames[0]}** in ${connect.channel.name}\n\n**By:** ${server.queueAuthor[0]}\n**Link:** ${server.queueList[0]}\n**Length:** ${server.queueLength[0]}`)
       .setFooter(`Requester: ${server.queueMessages[0].author.tag}`, server.queueMessages[0].author.avatarURL);
 
-    msg.channel.send({ embed: em }).then(m => m.delete(50000));
+    msg.channel.send({ embed: em });
 	server.dispatcher = msg.guild.voiceConnection.playStream(YTDL(server.queueList[0], { audioonly: true }), { passes: process.env.passes ? process.env.passes : require("./config.json").passes});
    // passes -- can be increased to reduce packetloss at the expense of upload bandwidth, 4-5 should be lossless at the expense of 4-5x upload
 
@@ -84,7 +84,7 @@ function play(connect, msg, bot) {
       .setThumbnail(server.queueImage[0])
       .setDescription(`I have skipped **${server.queueNames[0]}** in ${connect.channel.name}\n\n**Reason:** Livestream Error`);
 
-    msg.channel.send({ embed: em }).then(m => m.delete(`10000`));
+    msg.channel.send({ embed: em });
   }
 }
 
@@ -123,7 +123,7 @@ function parseUpload(bot, server, link, message, playlist) {
             .setDescription(`I could not add **${info.title}** to play in ${message.member.voiceChannel.name}\n\n**Reason:** Livestream`)
             .setFooter(`Requester: ${message.author.tag}`, message.author.avatarURL);
 
-          message.channel.send({ embed: em }).then(m => m.delete(5000));
+          message.channel.send({ embed: em });
           return;
         }
       }
@@ -146,7 +146,7 @@ function parseUpload(bot, server, link, message, playlist) {
             .setDescription(`I have added **${info.title}** to play in ${message.member.voiceChannel.name}\n\n**By:** ${info.channel.title}\n**Link:** ${link}\n**Length:** ${length} `)
             .setFooter(`Requester: ${message.author.tag}`, message.author.avatarURL);
 
-          message.channel.send({ embed: em }).then(m => m.delete(10000));
+          message.channel.send({ embed: em });
         }
       }
     })
@@ -193,7 +193,7 @@ bot.on(`message`, (message) => {
         message.channel.send(":x: Umm where's the link?");
         break;
       }
-      message.channel.send(`<@${message.author.id}>, I will now process that song name/link!`).then(m => m.delete(5000));
+      message.channel.send(`<@${message.author.id}>, I will now process that song name/link!`);
       if (!servers[message.guild.id]) {
         servers[message.guild.id] = { queueList: [], queueNames: [], queueAuthor: [], queueImage: [], queueLength: [], queueMessages: [], skipNum: 0, skipUsers: [] };
       }
@@ -216,7 +216,7 @@ bot.on(`message`, (message) => {
             .addField(`**4.** ${videos[3].title}`, `[${videos[3].channel.title}](https://www.youtube.com/channel/${videos[3].channel.id}) `)
             .addField(`**5.** ${videos[4].title}`, `[${videos[4].channel.title}](https://www.youtube.com/channel/${videos[4].channel.id}) `);
 
-          message.channel.send({ embed: choice }).then(m =>m.delete(10000));
+          message.channel.send({ embed: choice });
 
 
           message.channel.awaitMessages(m => m.content > 0 && m.content < 6, {
@@ -235,7 +235,7 @@ bot.on(`message`, (message) => {
             .catch(err => {
               console.log(err);
               //console.log(collected.first().author.id);
-              message.channel.send(`** Canceled **`).then(m => m.delete(5000));
+              message.channel.send(`** Canceled **`);
               removedat(message);
             });
 
@@ -323,7 +323,7 @@ bot.on(`message`, (message) => {
         .setThumbnail(message.guild.iconURL !== null ? message.guild.iconURL : "https://maxcdn.icons8.com/Share/icon/Logos//discord_logo1600.png")
 		.setFooter(`Server Queue`, bot.user.avatarURL);
 		
-      message.channel.send({ embed: queue_embed }).then(m => m.delete(55000));
+      message.channel.send({ embed: queue_embed });
       break;
     case "np":
       removedat(message);
@@ -338,7 +338,7 @@ bot.on(`message`, (message) => {
         .setDescription(`**Now Playing** \n\n **Name: ** ${server.queueNames[0]}\n **By: ** ${server.queueAuthor[0]}\n **Link: ** ${server.queueList[0]}\n **Length:** ${server.queueLength[0]}\n **Requester: ** ${server.queueMessages[0].author.tag}`)
 		.setFooter(`Now Playing`, bot.user.avatarURL);
 		
-      message.channel.send({ embed: npem }).then(m => m.delete(50000));
+      message.channel.send({ embed: npem });
       break;
   }
   //message.delete();
